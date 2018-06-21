@@ -2,6 +2,8 @@
 
 namespace App\Handlers;
 
+use Image;
+
 /**
  * 
  */
