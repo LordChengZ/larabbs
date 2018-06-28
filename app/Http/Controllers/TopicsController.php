@@ -43,7 +43,7 @@ class TopicsController extends Controller
 		$topic->fill($request->all());
 		$topic->user_id = Auth::id();
 		$topic->save();
-
+		dd($topic->link());
 		return redirect()->to($topic->link())->with('message', '创建话题成功！');
 	}
 
