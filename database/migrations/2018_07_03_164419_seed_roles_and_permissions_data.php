@@ -42,13 +42,14 @@ class SeedRolesAndPermissionsData extends Migration
     {
         app()['cache']->forget('spatie.permission.cache');
 
-        $tableNames = config('permission.table_name');
+        $tableNames = config('permission.table_names');
 
         Model::unguard();
-        DB::table($tableNames['role_has_permission'])->delete();
+        DB::table($tableNames['role_has_permissions'])->delete();
         DB::table($tableNames['model_has_roles'])->delete();
         DB::table($tableNames['model_has_permissions'])->delete();
         DB::table($tableNames['roles'])->delete();
         DB::table($tableNames['permissions'])->delete();
+        Model::reguard();
     }
 }
