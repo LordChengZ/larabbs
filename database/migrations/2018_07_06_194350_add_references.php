@@ -20,7 +20,7 @@ class AddReferences extends Migration
         Schema::table('replies', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->foreign('topic_id')->references('id')->on('topic')->onDelete('cascade');
+            $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
         });
     }
 
